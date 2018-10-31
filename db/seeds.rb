@@ -34,7 +34,7 @@ host1 = User.new(
    first_name: "Darlene",
    last_name: Faker::Artist.name,
    email: "abc1@gmail.com",
-   password: Faker::Pokemon.name,
+   password: "assdfuahgihaga",
    address: "Milano"
    )
 
@@ -44,7 +44,7 @@ host2 = User.new(
    first_name: "Lucy",
    last_name: Faker::Artist.name,
    email: "abc2@gmail.com",
-   password: Faker::Pokemon.name,
+   password: "assdfuahgihaga",
    address: "Milano"
    )
 
@@ -54,7 +54,7 @@ host3 = User.new(
    first_name: "Nico",
    last_name: Faker::Artist.name,
    email: "abc3@gmail.com",
-   password: Faker::Pokemon.name,
+   password: "assdfuahgihaga",
    address: "Milano"
    )
 
@@ -64,7 +64,7 @@ host4 = User.new(
    first_name: "Fra",
    last_name: Faker::Artist.name,
    email: "abc4@gmail.com",
-   password: Faker::Pokemon.name,
+   password: "assdfuahgihaga",
    address: "Milano"
    )
 
@@ -74,7 +74,7 @@ host5 = User.new(
    first_name: "Marco",
    last_name: Faker::Artist.name,
    email: "abc5@gmail.com",
-   password: Faker::Pokemon.name,
+   password: "assdfuahgihaga",
    address: "Milano"
    )
 
@@ -94,6 +94,50 @@ user = User.new(
    )
 user.save!
 end
+
+p "Creating reservations"
+
+reservation = Reservation.new(
+  date_from: "2019-01-02",
+  date_to: "2019-01-03",
+  item_id: Item.first.id,
+  host_id: User.first.id,
+  customer_id: User.last.id
+  )
+
+reservation.save!
+
+reservation = Reservation.new(
+  date_from: "2019-01-03",
+  date_to: "2019-01-04",
+  item_id: Item.last.id,
+  host_id: User.last.id,
+  customer_id: User.first.id
+  )
+
+reservation.save!
+
+reservation = Reservation.new(
+  date_from: "2019-01-03",
+  date_to: "2019-01-04",
+  item_id: Item.first.id,
+  host_id: User.last.id,
+  customer_id: User.first.id
+  )
+
+reservation.save!
+
+
+reservation = Reservation.new(
+  date_from: "2019-01-03",
+  date_to: "2019-01-04",
+  item_id: Item.last.id,
+  host_id: User.first.id,
+  customer_id: User.last.id
+  )
+
+reservation.save!
+
 
 p "Done"
 
