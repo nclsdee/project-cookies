@@ -1,4 +1,13 @@
+<div style="width: 130px; margin: auto; padding-top: 32px;">
+
 <%= @item.title %>
+<br>
+<p> <%= @item.price %> €/day </p>
 
 <br>
-<%= link_to "Back", :back %>
+<br>
+
+<%= link_to "Book", new_item_reservation_path(@item) %>
+
+
+</div>
