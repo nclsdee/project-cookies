@@ -15,6 +15,7 @@ p "old data destroyed"
 
 
 category_array = ["kitchen", "garden", "house", "vehicles"]
+city = ["Milano", "Sori", "Roma", "Venezia", "Cologna Spiaggia"]
 
 url = ["https://images-na.ssl-images-amazon.com/images/I/71dYLgezxjL._SL1500_.jpg", "https://images.homedepot-static.com/productImages/e0e3c4f4-cf41-46e7-94b2-db1a9b82e5c6/svn/blues-kalorik-canister-vacuums-wfvc-43331-bl-64_1000.jpg", "http://www.motorstown.com/newsImages/honda-mean-mower-2.jpg"]
 
@@ -40,7 +41,7 @@ host1 = User.new(
    last_name: Faker::Artist.name,
    email: "abc1@gmail.com",
    password: "assdfuahgihaga",
-   address: "Milano",
+   address: city.sample ,
    photo: "https://kitt.lewagon.com/placeholder/users/ssaunier"
    )
 
@@ -51,7 +52,7 @@ host2 = User.new(
    last_name: Faker::Artist.name,
    email: "abc2@gmail.com",
    password: "assdfuahgihaga",
-   address: "Milano",
+   address: city.sample,
    photo: "https://kitt.lewagon.com/placeholder/users/ssaunier"
    )
 
@@ -62,7 +63,7 @@ host3 = User.new(
    last_name: Faker::Artist.name,
    email: "abc3@gmail.com",
    password: "assdfuahgihaga",
-   address: "Milano",
+   address: city.sample,
    photo: "https://kitt.lewagon.com/placeholder/users/ssaunier"
    )
 
@@ -73,7 +74,7 @@ host4 = User.new(
    last_name: Faker::Artist.name,
    email: "abc4@gmail.com",
    password: "assdfuahgihaga",
-   address: "Milano",
+   address: city.sample,
    photo: "https://kitt.lewagon.com/placeholder/users/ssaunier"
    )
 
@@ -84,7 +85,7 @@ host5 = User.new(
    last_name: Faker::Artist.name,
    email: "abc5@gmail.com",
    password: "assdfuahgihaga",
-   address: "Milano",
+   address: city.sample,
    photo: "https://kitt.lewagon.com/placeholder/users/ssaunier"
    )
 
@@ -100,9 +101,9 @@ p "Creating users"
 user = User.new(
    first_name: Faker::Company.name,
    last_name: Faker::Artist.name,
-   email: "#{Faker::Pokemon.name}@gmail.com",
+   email: "#{Faker::Pokemon.name}@#{Faker::Pokemon.name}.com",
    password: "ABCDEFOASFJFA)2124",
-   address: "Milano",
+   address: city.sample,
    photo: "https://kitt.lewagon.com/placeholder/users/ssaunier"
    )
 user.save!
