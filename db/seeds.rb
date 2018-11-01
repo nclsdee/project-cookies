@@ -6,38 +6,37 @@ require 'faker'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-<<<<<<< HEAD
-require 'faker'
-
-5.times do
-  User.create(
-    first_name: Faker::Company.name,
-    last_name: Faker::Artist.name ,
-    email: "#{Faker::Company.name}@#{Faker::Artist.name}.com" ,
-    phone_number: Faker::PhoneNumber.phone_number,
-    address: "Milano",
-    date_of_birth: Faker::Date.birthday(18, 65),
-    )
-end
 
 
+# 5.times do
+#   User.create(
+#     first_name: Faker::Company.name,
+#     last_name: Faker::Artist.name ,
+#     email: "#{Faker::Company.name}@#{Faker::Artist.name}.com" ,
+#     phone_number: Faker::PhoneNumber.phone_number,
+#     address: "Milano",
+#     date_of_birth: Faker::Date.birthday(18, 65),
+#     )
+# end
 
-    category_array = w%(kitchen garden house vehicles),
 
-10.times do
-  Listing.new(
-    title: Faker::Pokemon.move,
-    description: Faker::ElectricalComponents.active,
-    daily_price: rand(1..200),
-    category: category_array.sample
-    )
-end
-=======
 
-Item.destroy_all
-User.destroy_all
+#     category_array = w%(kitchen garden house vehicles),
 
-p "old data destroyed"
+# 10.times do
+#   Listing.new(
+#     title: Faker::Pokemon.move,
+#     description: Faker::ElectricalComponents.active,
+#     daily_price: rand(1..200),
+#     category: category_array.sample
+#     )
+# end
+
+
+# Item.destroy_all
+# User.destroy_all
+
+# p "old data destroyed"
 
 
 category_array = ["kitchen", "garden", "house", "vehicles"]
@@ -168,7 +167,3 @@ reservation.save!
 
 p "Done"
 
-
-
-
->>>>>>> b64e293f46c215a448a180296e04be280a05d746
