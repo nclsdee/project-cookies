@@ -1,28 +1,39 @@
 
 
-<div class="row-fluid">
+ <div class="row-fluid">
   <div class="col-md-6">
     <div id="map" style='width: 100%; height: 600px;'></div>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-6" style="padding: 15px;">
     <%= link_to new_item_path do %>
       <button class="btn btn-primary">Add a new item</button>
     <% end %>
 
     <hr>
 
+    <% @items.each do |item| %>
 
+    <div class="row-fluid">
+      <%= link_to item_path(item) do %>
 
- <% @items.each do |item| %>
-  <div class="row-fluid">
-    <h2><%= link_to item.title, item %></h2>
-    <p><%= item.price %></p>
-    <%= link_to "Edit", edit_item_path(item), class: "btn btn-default" %>
-    or
-    <%= link_to "delete", item, method: :delete, data: { confirm: 'Are you sure?' }  %>
+          <div class="card" style="border-radius: 3px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= item.photo %>);">
+          <div class="card-category"> Available</div>
+          <div class="card-description">
+            <h2><%= item.title %></h2>
+            <p>Very cool tool, the best</p>
+          <p><%= item.price %></p>
+          </div>
+          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+        </div>
+
+      <% end %>
+
+      </div>
+
+    <% end %>
+
   </div>
-<% end %>
-
+</div>
 
 
 <% content_for(:after_js) do %>
@@ -41,33 +52,6 @@
   </script>
 <% end %>
 
-<div class="container">
-  <div class="row">
-
-    <% @items.each do |item| %>
-
-    <div class="col-xs-12 col-sm-4" style="padding: 15px;">
-
-      <%= link_to item_path(item) do %>
-
-          <div class="card" style="border-radius: 3px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= item.photo %>);">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2><%= item.title %></h2>
-            <p>Very cool tool, the best</p>
-          <p><%= item.price %></p>
-          </div>
-          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-        </div>
-
-      <% end %>
-
-      </div>
-
-    <% end %>
-
-  </div>
-</div>
 
 
 
