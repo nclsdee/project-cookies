@@ -17,7 +17,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'pg_search'
-
+gem "geocoder"
 gem 'faker'
 
 group :development do
