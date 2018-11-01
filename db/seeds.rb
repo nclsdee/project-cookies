@@ -15,9 +15,12 @@ User.destroy_all
 p "old data destroyed"
 
 
-category_array = ["kitchen", "garden", "house", "vehicles"]
-city = ["Milano, Metropolitan City of Milan, Italy", "Milano", "Sori", "Roma", "Venezia", "Cologna Spiaggia"]
 
+category_array = ["kitchen", "garden", "house", "vehicles"]
+city = ["Milano, Metropolitan City of Milan, Italy", "Sori", "Roma", "Venezia", "Cologna Spiaggia"]
+
+
+url = ["https://images-na.ssl-images-amazon.com/images/I/71dYLgezxjL._SL1500_.jpg", "https://images.homedepot-static.com/productImages/e0e3c4f4-cf41-46e7-94b2-db1a9b82e5c6/svn/blues-kalorik-canister-vacuums-wfvc-43331-bl-64_1000.jpg", "http://www.motorstown.com/newsImages/honda-mean-mower-2.jpg"]
 
 p "Creating hosts"
 
@@ -80,6 +83,8 @@ p "Created hosts"
 
 p "Creating users"
 
+
+
 10.times do
 user = User.new(
    first_name: Faker::Company.name,
@@ -92,7 +97,7 @@ user = User.new(
 user.save!
 end
 
-p "Creating users"
+p "Creating items"
 
 200.times do
  item = Item.new(
@@ -102,10 +107,13 @@ p "Creating users"
    category: category_array.sample,
    address: city.sample,
    user: User.all.sample,
+   photo: url.sample
    )
-
+  
  item.save!
 end
+
+
 
 p "items created"
 

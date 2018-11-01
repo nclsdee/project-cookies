@@ -7,8 +7,4 @@ class User < ApplicationRecord
   has_many :own_reservations, :class_name => "Reservation", :foreign_key => "customer_id"
   has_many :received_reservations, :class_name => "Reservation", :foreign_key => "host_id"
   has_many :items
-
-  validates :first_name, :last_name, :address, presence: true
-
-
 end
