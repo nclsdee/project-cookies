@@ -6,29 +6,34 @@ require 'faker'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+Reservation.destroy_all
 Item.destroy_all
 User.destroy_all
 
 p "old data destroyed"
 
 
+
 category_array = ["kitchen", "garden", "house", "vehicles"]
+
+url = ["https://images-na.ssl-images-amazon.com/images/I/71dYLgezxjL._SL1500_.jpg", "https://images.homedepot-static.com/productImages/e0e3c4f4-cf41-46e7-94b2-db1a9b82e5c6/svn/blues-kalorik-canister-vacuums-wfvc-43331-bl-64_1000.jpg", "http://www.motorstown.com/newsImages/honda-mean-mower-2.jpg"]
+
 
 10.times do
  item = Item.new(
    title: Faker::Pokemon.move,
    description: Faker::ElectricalComponents.active,
    price: rand(1..200),
-   category: category_array.sample
-   )
-
+   category: category_array.sample,
+   photo: url.sample
+)
  item.save!
 end
 
 p "items created"
 
 p "Creating hosts"
+
 
 host1 = User.new(
    first_name: "Darlene",
@@ -88,6 +93,8 @@ host5.save!
 p "Created hosts"
 
 p "Creating users"
+
+
 
 10.times do
 user = User.new(
