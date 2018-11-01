@@ -35,7 +35,8 @@ host1 = User.new(
    last_name: Faker::Artist.name,
    email: "abc1@gmail.com",
    password: "assdfuahgihaga",
-   address: "Milano"
+   address: "Milano",
+   photo: "https://kitt.lewagon.com/placeholder/users/ssaunier"
    )
 
 host1.save!
@@ -45,7 +46,8 @@ host2 = User.new(
    last_name: Faker::Artist.name,
    email: "abc2@gmail.com",
    password: "assdfuahgihaga",
-   address: "Milano"
+   address: "Milano",
+   photo: "https://kitt.lewagon.com/placeholder/users/ssaunier"
    )
 
 host2.save!
@@ -55,7 +57,8 @@ host3 = User.new(
    last_name: Faker::Artist.name,
    email: "abc3@gmail.com",
    password: "assdfuahgihaga",
-   address: "Milano"
+   address: "Milano",
+   photo: "https://kitt.lewagon.com/placeholder/users/ssaunier"
    )
 
 host3.save!
@@ -65,7 +68,8 @@ host4 = User.new(
    last_name: Faker::Artist.name,
    email: "abc4@gmail.com",
    password: "assdfuahgihaga",
-   address: "Milano"
+   address: "Milano",
+   photo: "https://kitt.lewagon.com/placeholder/users/ssaunier"
    )
 
 host4.save!
@@ -75,7 +79,8 @@ host5 = User.new(
    last_name: Faker::Artist.name,
    email: "abc5@gmail.com",
    password: "assdfuahgihaga",
-   address: "Milano"
+   address: "Milano",
+   photo: "https://kitt.lewagon.com/placeholder/users/ssaunier"
    )
 
 host5.save!
@@ -90,7 +95,8 @@ user = User.new(
    last_name: Faker::Artist.name,
    email: "#{Faker::Pokemon.name}@gmail.com",
    password: "ABCDEFOASFJFA)2124",
-   address: "Milano"
+   address: "Milano",
+   photo: "https://kitt.lewagon.com/placeholder/users/ssaunier"
    )
 user.save!
 end
