@@ -3,12 +3,13 @@ class ItemsController < ApplicationController
 
   def index
     if params[:query].present?
-      @items = Item.where(category: params[:query])
+      @items = Item.where(category: params[:category])
+      @items_sorted = @items.near(params[:query], params[:radius].to_i)
+      raise
     else
       @items = Item.all
     end
   end
-
 
   def show
     @item = Item.find(params[:id])

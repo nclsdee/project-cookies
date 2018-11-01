@@ -7,26 +7,55 @@
   </div>
 </div>
 
-<form action="/action_page.php">
-  <fieldset>
-    <legend>Location information:</legend>
-    Street name:<br>
-    <input type="text" name="street" value="Type here"><br>
-    City:<br>
-    <input type="text" name="city" value="Type here"><br><br>
-    <%= link_to "submit", items_path %>
-  </fieldset>
-</form>
+<%= form_tag items_path, method: :get do %>
+ <div class="container">
+  <div class="radio-tile-group">
 
-<form>
-  <input type="radio" name="category" value="kitchen" checked> Kitchen<br>
-  <input type="radio" name="category" value="garden"> Garden<br>
-  <input type="radio" name="category" value="garden"> Panting<br>
-  <input type="radio" name="category" value="garden"> Contruction<br>
-  <input type="radio" name="category" value="other"> Other
-</form>
+    <div class="input-container">
+      <input id="kitchen" class="radio-button" type="radio" name="category" value="kitchen" />
+      <div class="radio-tile">
+        <label for="walk" class="radio-tile-label">Kitchen</label>
+      </div>
+    </div>
 
+    <div class="input-container">
+      <input id="garden" class="radio-button" type="radio" name="category" value="garden" />
+      <div class="radio-tile">
+        <label for="bike" class="radio-tile-label">Garden</label>
+      </div>
+    </div>
 
+    <div class="input-container">
+      <input id="painting" class="radio-button" type="radio" name="category" value="Paiting" />
+      <div class="radio-tile">
+        <label for="drive" class="radio-tile-label">Painting</label>
+      </div>
+    </div>
+
+    <div class="input-container">
+      <input id="construction" class="radio-button" type="radio" name="category" value="construction" />
+      <div class="radio-tile">
+        <label for="fly" class="radio-tile-label">Construction</label>
+      </div>
+    </div>
+
+    <div class="input-container">
+      <input id="other" class="radio-button" type="radio" name="category" value="other" />
+      <div class="radio-tile">
+        <label for="fly" class="radio-tile-label">Other</label>
+      </div>
+    </div>
+
+  </div>
+</div>
+  <br>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Please type in your address"
+  %>
+  <%= select_tag "radius", raw("<option>5</option><option>10</option><option>20</option><option>50</option><option>100</option>") %>
+<% end %>
 
 
 

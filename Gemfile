@@ -18,6 +18,11 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'pg_search'
 gem "geocoder"
+<<<<<<< HEAD
+=======
+gem 'dotenv-rails', groups: [:development, :test]
+
+>>>>>>> df53ca5da4cac1729b9e094bcc5af8a8b5c2f177
 gem 'faker'
 
 group :development do
