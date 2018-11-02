@@ -2,7 +2,12 @@
 
  <div class="row-fluid">
   <div class="col-md-6">
-    <div id="map" style='width: 100%; height: 600px;'></div>
+    <div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+></div>
   </div>
   <div class="col-md-6" style="padding: 15px;">
     <%= link_to new_item_path do %>
@@ -34,117 +39,3 @@
 
   </div>
 </div>
-
-
-<% content_for(:after_js) do %>
-  <script type="text/javascript">
-    var handler = Gmaps.build('Google');
-    handler.buildMap({ internal: { id: 'map' } }, function(){
-      markers = handler.addMarkers(<%= raw @hash.to_json %>);
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-      if (markers.length == 0) {
-        handler.getMap().setZoom(2);
-      } else if (markers.length == 1) {
-        handler.getMap().setZoom(14);
-      }
-    });
-  </script>
-<% end %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- <li class="cards__item">
-    <div class="card">
-      <div class="card__image card__image--river"></div>
-      <div class="card__content">
-        <div class="card__title">Flex Grow</div>
-        <p class="card__text">This defines the ability for a flex item to grow if necessary. It accepts a unitless value that serves as a proportion. It dictates what amount of the available space inside the flex container the item should take up.</p>
-        <button class="btn btn--block card__btn">Button</button>
-      </div>
-    </div>
-  </li>
-  <li class="cards__item">
-    <div class="card">
-      <div class="card__image card__image--record"></div>
-      <div class="card__content">
-        <div class="card__title">Flex Shrink</div>
-        <p class="card__text">This defines the ability for a flex item to shrink if necessary. Negative numbers are invalid.</p>
-        <button class="btn btn--block card__btn">Button</button>
-      </div>
-    </div>
-  </li>
-  <li class="cards__item">
-    <div class="card">
-      <div class="card__image card__image--flowers"></div>
-      <div class="card__content">
-        <div class="card__title">Flex Basis</div>
-        <p class="card__text">This defines the default size of an element before the remaining space is distributed. It can be a length (e.g. 20%, 5rem, etc.) or a keyword. The auto keyword means "look at my width or height property."</p>
-        <button class="btn btn--block card__btn">Button</button>
-      </div>
-    </div>
-  </li> -->
-
-
-<!-- <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-  <div class="card-category">Popular</div>
-  <div class="card-description">
-    <h2>Le Wagon Shanghai</h2>
-    <p>Very cool city, the best</p>
->>>>>>> 2429627ee9726bd514b9d3cab14751e97422e76a
-  </div>
-  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-  <a class="card-link" href="#" ></a>
-</div>
-<<<<<<< HEAD
-
-<% content_for(:after_js) do %>
-  <script type="text/javascript">
-    var handler = Gmaps.build('Google');
-    handler.buildMap({ internal: { id: 'map' } }, function(){
-      markers = handler.addMarkers(<%= raw @hash.to_json %>);
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-      if (markers.length == 0) {
-        handler.getMap().setZoom(2);
-      } else if (markers.length == 1) {
-        handler.getMap().setZoom(14);
-      }
-    });
-  </script>
-<% end %>
-
-
-=======
-
