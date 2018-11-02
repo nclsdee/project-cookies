@@ -1,4 +1,7 @@
 class ReservationsController < ApplicationController
+  def index
+    @reservations = Reservation.where(host_id: current_user.id)
+  end
 
   def new
     @item = Item.find(params[:item_id])
@@ -15,7 +18,7 @@ class ReservationsController < ApplicationController
     @reservation.item_id = @item.id
 
     if @reservation.save!
-      redirect_to items_path
+      redirect_to item_path(@reservation.item_id)
     else
       raise
     end

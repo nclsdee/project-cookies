@@ -80,3 +80,49 @@
     -webkit-border-radius:0 !important;
 }
 
+.wrapping {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.doses-card {
+  margin-top: 0;
+  margin-left: 0;
+  color: gray;
+  box-shadow: none;
+  text-shadow: none;
+  font-size: 10px;
+  vertical-align: center;
+  width: 100%;
+  text-align: center;
+  ul {
+    padding: 0;
+  }
+  ul li{
+    font-size: 10px;
+    font-weight: lighter;
+    list-style: none;
+    margin-left: 0;
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.show-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 70vh;
+  margin: 10px 0px;
+}
+
+.show-img {
+  font-size: 16px;
+}
+
+

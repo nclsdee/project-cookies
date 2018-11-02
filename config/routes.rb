@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :items do
     resources :reservations, only: [:new, :create]
   end
+  get "reservations/", to: "reservations#index"
+  get "myitemindex/", to: "items#itemindex"
 end
 
 

@@ -1,0 +1,30 @@
+<div class="reservations">
+
+<h1>My reservations</h1>
+
+<% @reservations.each do |reservation| %>
+<% item = Item.find(reservation.item_id) %>
+
+ <div class="row-fluid">
+
+    <div class="col-xs-12 col-sm-4"">
+      <div class="reservation">
+
+      <%= link_to item_path(item) do %>
+
+          <div class="card reservation-image" style="border-radius: 3px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= item.photo %>);">
+          <div class="card-category"> Available</div>
+          <div class="card-description">
+            <h2><%= item.title %></h2>
+        </div>
+          </div>
+          <div class="reservation-card">
+            <p>Reserved from: <%= reservation.date_from  %></p>
+            <p>Reserved to: <%= reservation.date_to  %></p>
+      </div>
+      <% end %>
+      </div>
+      </div>
+<% end %>
+</div>
+
