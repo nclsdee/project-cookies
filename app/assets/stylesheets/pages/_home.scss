@@ -1,4 +1,6 @@
 // Specific CSS for your home-page
+$primary-color: #FDB631;
+
 .banner {
   color: white;
   text-align: center;
@@ -22,3 +24,23 @@
   margin-bottom: 30px;
 }
 
+#input-fields {
+  display: flex;
+  width: 50vw;
+  margin: 0 auto;
+  font-size: 8px;
+}
+
+.form-control {
+  font-size: 8px;
+}
+
+.form_submit {
+  font-size: 8px;
+  background-color: $primary-color;
+  border-style: none;
+  color: white;
+  border-radius: 2px;
+  display: block;
+  margin: 20px auto;
+}

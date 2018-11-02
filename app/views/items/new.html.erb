@@ -1,14 +1,15 @@
-<h1>This is a new page</h1>
-
+<div id="formwrapper">
+<h1>Add new item</h1>
 <%= simple_form_for @item do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :category %>
+  <%= f.input :title, placeholder: 'Give your tool a title' %>
+  <%= f.input :description, placeholder: 'Describe your tool' %>
+  <%= f.input :price, placeholder: 'Specify the daily price of your tool' %>
+  <%= f.input :category, placeholder: 'Pick one of our five categories: Kitchen, Construction, Painting, Garden, Other'  %>
   <%= f.input :image_up %>
   <%= f.input :image_up_cache, as: :hidden %>
 
   <%= f.hidden_field :address, value: current_user.address %>
   <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.submit "Add item", class: "btn btn-primary" %>
+  <%= f.submit "Add item", class: "btn btn-primary btn-submit" %>
 <% end %>
+</div>

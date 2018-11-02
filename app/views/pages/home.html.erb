@@ -49,12 +49,15 @@
   </div>
 </div>
   <br>
+  <div id="input-fields">
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
     placeholder: "Please type in your address"
   %>
   <%= select_tag "radius", raw("<option>5</option><option>10</option><option>20</option><option>50</option><option>100</option>") %>
+  </div>
+  <%= submit_tag nil, class: "form_submit" %>
 <% end %>
 
 

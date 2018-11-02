@@ -1,13 +1,21 @@
-<div style="width: 130px; margin: auto; padding-top: 32px;">
+<div class="wrapping">
 
-<%= @item.title %>
-<br>
-<p> <%= @item.price %> €/day </p>
+ <div class="card show-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @item.photo %>')">
+        </div>
 
-<br>
-<br>
+<div class="card doses-card">
+  <h5> <%= @item.title %></h5>
+
+  <p> <%= @item.description %> </p>
+  <p> <%= @item.price %> €/day </p>
+
 
 <%= link_to "Book", new_item_reservation_path(@item) %>
-
+</div>
 
 </div>
+
+
+
+
+
