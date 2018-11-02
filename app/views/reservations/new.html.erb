@@ -1,0 +1,9 @@
+
+
+<div style="width: 192px; margin: auto;">
+<%= simple_form_for [@item, @reservation] do |f| %>
+  <%= f.input :date_from %>
+  <%= f.input :date_to %>
+  <%= f.submit "add a reservation", class: "btn btn-primary" %>
+<% end %>
+</div>

@@ -14,11 +14,15 @@
       <button class="btn btn-primary">Add a new item</button>
     <% end %>
 
+
     <hr>
 
     <% @items.each do |item| %>
 
     <div class="row-fluid">
+
+    <div class="col-xs-12 col-sm-4"">
+
       <%= link_to item_path(item) do %>
 
           <div class="card" style="border-radius: 3px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= item.photo %>);">
@@ -26,13 +30,12 @@
           <div class="card-description">
             <h2><%= item.title %></h2>
             <p>Very cool tool, the best</p>
-          <p><%= item.price %></p>
+            <p><%= item.price %></p>
           </div>
           <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
         </div>
 
       <% end %>
-
       </div>
 
     <% end %>
