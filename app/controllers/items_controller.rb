@@ -11,7 +11,22 @@ class ItemsController < ApplicationController
     end
   end
 
+  def new
+    @item = Item.new
+  end
+
+  def create
+    @item = Item.new(item_params)
+    @item.save
+  end
+
   def show
     @item = Item.find(params[:id])
+  end
+
+  private
+
+  def item_params
+    params.require(:item).permit(:description, :price, :category, :address, :image_up, :user_id, :title)
   end
 end
