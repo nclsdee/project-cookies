@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
 
   @items = Item.where.not(latitude: nil, longitude: nil)
 
-   @markers = @items.map do |item|
+   @markers = @items_sorted.map do |item|
       {
       lat: item.latitude,
       lng: item.longitude,
