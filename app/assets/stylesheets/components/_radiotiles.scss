@@ -9,6 +9,10 @@ $primary-color: #FDB631;
   height: 30vh;
 }
 
+.icon {
+  color: $primary-color;
+}
+
 .radio-tile-group {
   display: flex;
   flex-wrap: wrap;
