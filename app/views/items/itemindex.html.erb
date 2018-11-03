@@ -2,7 +2,7 @@
 
   <h1>These are my tools</h1>
 
-  <% @items.each do |item| %>
+  <% @items.sort_by(&:created_at).reverse.each do |item|  %>
 
   <div class="row-fluid">
 
