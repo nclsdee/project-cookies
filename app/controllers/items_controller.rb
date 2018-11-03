@@ -28,7 +28,8 @@ end
   def create
     @item = Item.new(item_params)
     @item.save
-    redirect_to homepage_path
+    flash[:notice] = "You've successfully listed #{@item.title} on Tools for Life!"
+    redirect_to myitemindex_path
   end
 
   def show

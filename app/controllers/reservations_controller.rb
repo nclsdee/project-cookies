@@ -18,7 +18,8 @@ class ReservationsController < ApplicationController
     @reservation.item_id = @item.id
 
     if @reservation.save!
-      redirect_to item_path(@reservation.item_id)
+      flash[:notice] = "You've successfully booked #{@item.title}"
+      redirect_to reservations_path
     else
       raise
     end

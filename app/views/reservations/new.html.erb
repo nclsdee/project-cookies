@@ -1,4 +1,4 @@
-
+<!--
 
 <div style="width: 192px; margin: auto;">
 <%= simple_form_for [@item, @reservation] do |f| %>
@@ -6,4 +6,19 @@
   <%= f.input :date_to %>
   <%= f.submit "add a reservation", class: "btn btn-primary" %>
 <% end %>
+</div>
+
+ -->
+
+
+<div class="container">
+  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+    <h2>Flatpickr Demo</h2>
+
+    <%= simple_form_for [@item, @reservation] do |f| %>
+      <%= f.input :date_from, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :date_to, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.submit "Add a reservation", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>
