@@ -16,11 +16,16 @@ p "old data destroyed"
 
 
 
-category_array = ["kitchen", "garden", "house", "vehicles"]
+category_array = ["kitchen", "garden", "construction", "painting", "other"]
 city = ["Milano, Metropolitan City of Milan, Italy", "Sori", "Roma", "Venezia", "Cologna Spiaggia"]
+address = ["Corso Magenta, 52, Milan, Metropolitan City of Milan, Italy", "Università Bocconi, Via Roberto Sarfatti, Milan, Metropolitan City of Milan, Italy", "Via Valenza, 15, Milan, Metropolitan City of Milan, Italy", "Duomo di Milano Italy, Piazza del Duomo, Milan, Metropolitan City of Milan, Italy", "N'Ombra de Vin, Via San Marco, Milan, Metropolitan City of Milan, Italy", "Starbucks Reserve Roastery Milano, Piazza Cordusio, Milan, Metropolitan City of Milan, Italy"]
 
 
-url = ["https://images-na.ssl-images-amazon.com/images/I/71dYLgezxjL._SL1500_.jpg", "https://images.homedepot-static.com/productImages/e0e3c4f4-cf41-46e7-94b2-db1a9b82e5c6/svn/blues-kalorik-canister-vacuums-wfvc-43331-bl-64_1000.jpg", "http://www.motorstown.com/newsImages/honda-mean-mower-2.jpg"]
+kitchen_pic = ["https://images.pexels.com/photos/6255/italian-coffee-vintage-espresso-6255.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "https://images.pexels.com/photos/1450903/pexels-photo-1450903.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "https://images.pexels.com/photos/60040/bread-home-appliances-small-appliances-60040.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"]
+garden_pic = ["https://images.pexels.com/photos/589/garden-grass-meadow-green.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "https://images.pexels.com/photos/127944/pexels-photo-127944.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "https://images.pexels.com/photos/296230/pexels-photo-296230.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"]
+construction_pic = ["https://images.pexels.com/photos/34520/confused-muddled-illogical-disoriented.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "https://images.pexels.com/photos/1094767/pexels-photo-1094767.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "https://images.pexels.com/photos/8663/drill-bits.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "https://images.pexels.com/photos/164957/pexels-photo-164957.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"]
+painting_pic = ["https://images.pexels.com/photos/6368/art-wall-brush-painting.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "https://images.pexels.com/photos/209230/pexels-photo-209230.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"]
+other_pic = ["https://images.pexels.com/photos/374074/pexels-photo-374074.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "https://images.pexels.com/photos/41369/beauty-brunette-cute-equipment-41369.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "https://images.pexels.com/photos/4614/woman-morning-bathrobe-bathroom.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"]
 
 p "Creating hosts"
 
@@ -83,15 +88,13 @@ p "Created hosts"
 
 p "Creating users"
 
-
-
 10.times do
 user = User.new(
    first_name: Faker::Company.name,
    last_name: Faker::Artist.name,
    email: Faker::Internet.email,
    password: "ABCDEFG",
-   address: "Milano",
+   address: address.sample,
    photo: "https://kitt.lewagon.com/placeholder/users/ssaunier"
    )
 user.save!
@@ -99,20 +102,75 @@ end
 
 p "Creating items"
 
-200.times do
+20.times do
  item = Item.new(
    title: Faker::Pokemon.move,
    description: Faker::ElectricalComponents.active,
    price: rand(1..200),
-   category: category_array.sample,
-   address: city.sample,
+   category: category_array[0],
+   address: address.sample,
    user: User.all.sample,
-   photo: url.sample
+   photo: kitchen_pic.sample
    )
-  
+
  item.save!
 end
 
+20.times do
+ item = Item.new(
+   title: Faker::Pokemon.move,
+   description: Faker::ElectricalComponents.active,
+   price: rand(1..200),
+   category: category_array[1],
+   address: address.sample,
+   user: User.all.sample,
+   photo: garden_pic.sample
+   )
+
+ item.save!
+end
+
+20.times do
+ item = Item.new(
+   title: Faker::Pokemon.move,
+   description: Faker::ElectricalComponents.active,
+   price: rand(1..200),
+   category: category_array[2],
+   address: address.sample,
+   user: User.all.sample,
+   photo: construction_pic.sample
+   )
+
+ item.save!
+end
+
+20.times do
+ item = Item.new(
+   title: Faker::Pokemon.move,
+   description: Faker::ElectricalComponents.active,
+   price: rand(1..200),
+   category: category_array[3],
+   address: address.sample,
+   user: User.all.sample,
+   photo: painting_pic.sample
+   )
+
+ item.save!
+end
+
+20.times do
+ item = Item.new(
+   title: Faker::Pokemon.move,
+   description: Faker::ElectricalComponents.active,
+   price: rand(1..200),
+   category: category_array[4],
+   address: address.sample,
+   user: User.all.sample,
+   photo: other_pic.sample
+   )
+
+ item.save!
+end
 
 
 p "items created"
