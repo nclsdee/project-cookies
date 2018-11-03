@@ -3,15 +3,6 @@
  <div class="card show-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @item.photo %>')">
         </div>
 
-<div class="card doses-card">
-  <h5> <%= @item.title %></h5>
-
-  <p> <%= @item.description %> </p>
-  <p> <%= @item.price %> €/day </p>
-
-
-<%= link_to "Book", new_item_reservation_path(@item) %>
-</div>
 
 </div>
 
@@ -19,3 +10,37 @@
 
 
 
+<div class="wrapper">
+    <div class="booking-card-wrapper">
+        <div class="booking-card-image">
+            <img class="booking-card-image" src=https://blogmedia.evbstatic.com/wp-content/uploads/wpmulti/sites/19/2016/08/22134343/shutterstock_82909396.jpg />
+        </div>
+        <div class="booking-card-content">
+            <div class="booking-card-description">
+                <h1> <%= @item.title %></h1>
+                <p> <%= @item.description %> </p>
+            </div>
+            <div class="booking-card-details">
+                <div class="flex">
+                    <div>
+                        <span class="price"><%= @item.price %></span> €/day*
+                        <div class="reviews">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="amount">  28 reviews </span>
+                        </div>
+                    </div>
+                    <div class="right-align">
+                        <button class="btn-primary"><%= link_to "Book Now", new_item_reservation_path(@item) %></button>
+                    </div>
+                </div>
+                <div>
+                    <p class="side-note">* Prices may vary depending on selected date</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
