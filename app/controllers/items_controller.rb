@@ -28,7 +28,7 @@ end
   def create
     @item = Item.new(item_params)
     @item.save
-    redirect_to root_path
+    redirect_to homepage_path
   end
 
   def show
