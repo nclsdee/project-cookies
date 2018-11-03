@@ -12,7 +12,12 @@
 
       <%= link_to item_path(item) do %>
 
-          <div class="card reservation-image" style="border-radius: 3px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= item.photo %>);">
+      <% if item.image_up.present? %>
+      <div class="card reservation-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path item.image_up%>')">
+
+      <% else %>
+      <div class="card reservation-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= item.photo %>')">
+      <% end %>
           <div class="card-category"> Available</div>
           <div class="card-description">
             <h2><%= item.title %></h2>
