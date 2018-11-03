@@ -5,6 +5,7 @@
  </div>
 
  <% else %>
+
  <div class="card show-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @item.photo %>')">
  </div>
  <% end %>
@@ -17,7 +18,21 @@
 <div class="wrapper">
     <div class="booking-card-wrapper">
         <div class="booking-card-image">
-            <img class="booking-card-image" src=https://blogmedia.evbstatic.com/wp-content/uploads/wpmulti/sites/19/2016/08/22134343/shutterstock_82909396.jpg />
+
+          <% if @item.image_up.present? %>
+
+          <%= cl_image_tag @item.image_up, class: "booking-card-image" %>
+
+
+
+        <%else   %>
+
+        <img class="booking-card-image" src="http://vyfhealth.com/wp-content/uploads/2015/10/yoga-placeholder1.jpg" >
+
+
+        <%end  %>
+
+
         </div>
         <div class="booking-card-content">
             <div class="booking-card-description">
