@@ -1,32 +1,35 @@
 <div class="reservations">
 
-<h1>These are my tools</h1>
+  <h1>These are my tools</h1>
 
-<% @items.each do |item| %>
+  <% @items.each do |item| %>
 
- <div class="row-fluid">
+  <div class="row-fluid">
 
     <div class="col-xs-12 col-sm-4"">
       <div class="reservation tools">
 
-      <%= link_to item_path(item) do %>
-
-          <div class="card reservation-image" style="border-radius: 3px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= item.photo %>);">
+        <%= link_to item_path(item) do %>
+        <% if item.image_up.present? %>
+        <div class="card reservation-image" style="border-radius: 3px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path item.image_up, crop: :fill %>');">
+         <% else %>
+         <div class="card reservation-image" style="border-radius: 3px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= item.photo %>);">
+          <% end %>
           <div class="card-category"> Available</div>
           <div class="card-description">
             <h2><%= item.title %></h2>
-        </div>
           </div>
-          <div class="reservation-card tools-card">
-            <h5>Details:</h5>
-            <ul>
+        </div>
+        <div class="reservation-card tools-card">
+          <h5>Details:</h5>
+          <ul>
             <li>Description: <%= item.description  %></li>
             <li>Category: <%= item.category  %></li>
             <li>Daily price: <%= item.price  %></li>
-            </ul>
+          </ul>
+        </div>
+        <% end %>
       </div>
-      <% end %>
-      </div>
-      </div>
-<% end %>
-</div>
+    </div>
+    <% end %>
+  </div>

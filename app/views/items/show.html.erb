@@ -1,9 +1,13 @@
 <div class="wrapping">
 
+ <% if @item.image_up.present? %>
+ <div class="card show-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @item.image_up%>')">
+ </div>
+
+ <% else %>
  <div class="card show-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @item.photo %>')">
-        </div>
-
-
+ </div>
+ <% end %>
 </div>
 
 
